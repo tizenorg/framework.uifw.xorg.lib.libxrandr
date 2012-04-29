@@ -1,8 +1,7 @@
-
-Name:       libXrandr
+Name:       libxrandr
 Summary:    X.Org X11 libXrandr runtime library
 Version:    1.3.1
-Release:    1
+Release:    2.6
 Group:      System/Libraries
 License:    MIT
 URL:        http://www.x.org/
@@ -27,7 +26,7 @@ Xorg libXrandr runtime library
 Summary:    Development components for the libXrandr library
 Group:      Development/Libraries
 Requires:   %{name} = %{version}-%{release}
-Requires:   libXrender-devel
+Requires:   libxrender-devel
 
 %description devel
 Xorg libXrandr development package
@@ -38,7 +37,7 @@ Xorg libXrandr development package
 
 
 %build
-
+export LDFLAGS+=" -Wl,--hash-style=both -Wl,--as-needed"
 %reconfigure --disable-static
 make %{?jobs:-j%jobs}
 
