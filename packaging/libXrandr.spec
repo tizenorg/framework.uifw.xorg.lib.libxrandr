@@ -36,7 +36,8 @@ make %{?jobs:-j%jobs}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-
+mkdir -p %{buildroot}/usr/share/license
+cp -af COPYING %{buildroot}/usr/share/license/%{name}
 make install DESTDIR=$RPM_BUILD_ROOT
 
 rm -f $RPM_BUILD_ROOT%{_libdir}/*.la
@@ -51,6 +52,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(-,root,root,-)
+/usr/share/license/%{name}
 %doc AUTHORS COPYING ChangeLog
 %{_libdir}/libXrandr.so.2
 %{_libdir}/libXrandr.so.2.2.0
