@@ -1,6 +1,6 @@
 Summary: X.Org X11 libXrandr runtime library
 Name: libXrandr
-Version: 1.4.0
+Version: 1.4.2
 Release: 3
 License: MIT
 Group: System Environment/Libraries
@@ -53,7 +53,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(-,root,root,-)
 /usr/share/license/%{name}
-%doc AUTHORS COPYING ChangeLog
+%doc AUTHORS COPYING
 %{_libdir}/libXrandr.so.2
 %{_libdir}/libXrandr.so.2.2.0
 
